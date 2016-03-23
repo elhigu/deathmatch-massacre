@@ -10,7 +10,7 @@ Peer.js allows to negotiate P2P WebRTC connection between browsers and pass vide
 
 Since canvas cannot act as a MediaSource we need to extract each frame separately for sending NES screen to slave. Host runs JSNES emulator and reads images from canvas rendered by JSNES, sends them thorugh WebRTC connection to slave machine which then renders them in remote side. Images are sent as base64 encoded png or jpeg strings.
 
-  
+![alt tag](http://elhigu.github.io/deathmatch-massacre/images/explain.png)
 
 ## Vincit hackfest 2015 project
 
