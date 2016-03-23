@@ -1,4 +1,6 @@
-# Deathmatch Massacre (online demo http://elhigu.github.io/deathmatch-massacre/)
+# Deathmatch Massacre 
+
+Online demo http://elhigu.github.io/deathmatch-massacre/
 
 Hacked together JSNES (https://github.com/bfirsh/jsnes) and WebRTC a la PeerJS to create P2P multiplayer support to NES emulator.
 
