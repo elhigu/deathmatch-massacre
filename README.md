@@ -1,16 +1,22 @@
 # Deathmatch Massacre
 
-Forced together JSNES (https://github.com/bfirsh/jsnes) and WebRTC a la PeerJS to create P2P multiplayer support to NES emulator.
+Hacked together JSNES (https://github.com/bfirsh/jsnes) and WebRTC a la PeerJS to create P2P multiplayer support to NES emulator.
 
-## Uh what? How does it work? What is exactly?
+<add video here>
 
-JSNES and Peer.js is the core of this hack.
+## Uh what? How does it work? What is it exactly?
 
-Peer.js allows to negotiate P2P WebRTC connection between browsers and pass video and audio to slave browser and to read keypress events from slave browser to host. 
+Peer.js allows to negotiate P2P WebRTC connection between browsers (without need to have own backend) and pass video and audio to slave browser and to read keypress events from slave browser to host. 
 
-Since canvas cannot act as a MediaSource we need to extract each frame separately for sending NES screen to slave. Host runs JSNES emulator and reads images from canvas rendered by JSNES, sends them thorugh WebRTC connection to slave machine which then renders them in remote side. Images are sent as base64 encoded png or jpeg strings.
+Since HTML5 canvas cannot act as a MediaSource we need to extract each frame separately for sending NES screen to slave. Host runs JSNES emulator and reads images from canvas rendered by JSNES, sends them thorugh WebRTC connection to slave machine which then renders them in to remote HTML5 canvas. Images are sent as base64 encoded png or jpeg strings.
 
 ![alt tag](http://elhigu.github.io/deathmatch-massacre/images/explain.jpg)
+
+## Which browsers it supports? Where is the code?
+
+Chrome seem to work fine. Needs keyboard for now, would be nice to have touch screen support, JSNES should run fine at least on some iPads.
+
+Code is under `gh-pages` branch... it is so horrible that I didn't want to put it here. Feel free to browse from there. I have no idea which parts of JSNES was overridden... you might want to compare code with original JSNES branch.
 
 ## Vincit hackfest 2015 project
 
@@ -38,8 +44,36 @@ Feel free to add rom name to list if you have tested it.
 - Bomberman.nes
 - Bubble Bobble (U).nes
 - CHIPDALE.NES
+- DTALES1.NES
+- Duck Tales III (Duck Tales) [p1][!].nes
+- DuckTales2.nes
+- GAUNTL~1.NES
+- GAUNTLET.NES
+- Golf (JU).nes
+- IKARI.NES
+- IKARI2.NES
+- Ikari3.nes
+- Lemmings (U).nes
+- Lifeforce (U).nes
+- Mario Bros. (JU) [!].nes
+- Mega Man (U).nes
+- Mega Man 2 (Europe).nes
+- Metroid (U) (PRG0) [!].nes
+- Pac-Man (U) [!].nes
+- Super Mario Bros. (JU) (PRG0) [!].nes
+- Super Mario Bros. 3 (U) (PRG1) [!].nes
+- Tennis (JU) [!].nes
+- Tetris (U) [!].nes
+- Tetris 2 (U) [!].nes
+- Track & Field II (Europe).nes
+- Zelda II - The Adventure of Link (U).nes
 
 ### Tested not to work
 
 - BATTLETO.NES
-- 
+- JACKAL.NES
+- Monster Truck Rally (U) [!].nes
+- RAINBOW.NES
+- RAMPART.NES
+- Track & Field in Barcelona (Europe).nes
+
