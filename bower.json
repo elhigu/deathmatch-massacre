@@ -1,0 +1,21 @@
+{
+  "name": "deathmatch-massacre",
+  "version": "0.0.0",
+  "authors": [
+    "Mikael Lepistö <mikael.lepisto@vincit.fi>",
+    "Panu Hokkanen <panu.hokkanen@vincit.fi>",
+  ],
+  "description": "WebRTC multiplayer maddness",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "peerjs": "~0.3.14"
+  }
+}

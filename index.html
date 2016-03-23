@@ -1,0 +1,119 @@
+<html>
+<head>
+  <title>Deathmatch massacre</title>
+  <link rel="stylesheet" href="styles/screen.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script type="text/javascript" src="/bower_components/peerjs/peer.js"></script>
+  <script src="jsnes/source/nes.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jsnes/source/utils.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jsnes/source/cpu.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jsnes/source/keyboard.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jsnes/source/mappers.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jsnes/source/papu.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jsnes/source/ppu.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jsnes/source/rom.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jsnes/source/ui.js" type="text/javascript" charset="utf-8"></script>
+  <script src="massacre.js" type="text/javascript" charset="utf-8"></script>
+  <script src="uimaddness300.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+  <div id="container-lander" class="container">
+    <div class="header large-header">
+      <h1>
+        <span class="glitch" data-text="DEATHMATCH">DEATHMATCH</span>
+        <span class="glitch" data-text="MASSACRE">MASSACRE</span>
+      </h1>
+      <div class="sub-text small-text">
+        JSNES: A JavaScript NES emulator
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="host-or-join">
+        <div class="information">
+          I bet you wish to play some nostalgic games right? <br>Today is your lucky day. Pick an option:
+        </div>
+
+        <button type="button" class="join-game">
+          Join
+        </button>
+        <button type="button" class="host-game">
+          Host
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="container-game">
+    <div class="side-bar">
+      <div class="header large-header">
+        <h1>
+          <span class="glitch" data-text="DEATHMATCH">DEATHMATCH</span>
+          <span class="glitch" data-text="MASSACRE">MASSACRE</span>
+        </h1>
+        <div class="sub-text small-text">
+          JSNES: A JavaScript NES emulator
+        </div>
+      </div>
+
+      <div class="host-or-join">
+        <div class="information">
+          I bet you wish to play some nostalgic games right? <br>Today is your lucky day. Pick an option:
+        </div>
+
+        <button type="button" class="join-game">
+          Join
+        </button>
+        <button type="button" class="host-game">
+          Host
+        </button>
+      </div>
+
+      <div class="host-options">
+        <div class="nes-other-stuff" id="nes-other-stuff">
+          <h2>Game options</h2>
+          <p>Host id: <span id="my-id">Start emulator to get id!</span></p>
+          <div class="status">
+            <p>Quality: <span id="quality">png/1</span></p>
+            <p>Image: <span id="image_bandwidth"></span></p>
+            <!-- p>Music: <span id="music_bandwidth"></span></p-->
+            <p>Total: <span id="bandwidth"></span></p>
+          </div>
+          <div class="status">
+            <span>Load your own ROM:</span><input id="loadrom" type="file">
+          </div>
+        </div>
+      </div>
+
+      <div class="join-options">
+        <h2>Join options</h2>
+        <input type="text" placeholder="Host id to connect..." id="hostid">
+        <button type="button" id="connect">Call</button>
+        <div class="select-image-compression" style="text-align: left; margin-left: 50px; ">
+          <input type="radio" name="video-quality" value="png/1" checked> PNG (good)</br>
+          <input type="radio" name="video-quality" value="jpeg/0.3"> JPEG quality 0.3 (bad)</br>
+          <input type="radio" name="video-quality" value="jpeg/0.1"> JPEG quality 0.1 (ugly)</br>
+          <input type="radio" name="video-quality" value="jpeg/0.001"> JPEG quality 0.001 (awesomest!)</br>
+        </div>
+      </div>
+      <div class="controls">
+        <img src="/images/controls.png" title="Game controls">
+      </div>
+    </div>
+
+    <div class="game-content">
+      <div class="emulator-container">
+        <div id="emulator"></div>
+        <div id="emulator-slave">
+          <canvas class="slave-canvas" width="256" height="240"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>Hackfest 2015 ///// Mikael Lepistö, Panu Hokkanen</div>
+  </div>
+</body>
+</html>
